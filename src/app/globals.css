@@ -1,0 +1,235 @@
+/* Updated: 2025-12-07T17:37:03.402Z */
+/* Updated: 2025-12-07T17:15:49.153Z */
+/* Updated: 2025-12-05T09:32:38.934Z */
+/* Updated: 2025-12-04T19:06:21.349Z */
+/* Updated: 2025-12-04T18:16:13.872Z */
+/* Updated: 2025-12-04T16:37:57.871Z */
+/* Updated: 2025-12-04T16:08:08.110Z */
+/* Updated: 2025-12-04T15:23:55.657Z */
+/* Updated: 2025-12-04T15:13:27.261Z */
+/* Updated: 2025-12-04T14:40:27.107Z */
+/* Updated: 2025-12-04T14:31:42.283Z */
+/* Updated: 2025-12-04T14:25:03.146Z */
+/* Updated: 2025-12-04T13:56:12.273Z */
+/* Updated: 2025-12-04T13:54:19.741Z */
+/* Updated: 2025-12-04T13:54:08.868Z */
+/* Updated: 2025-12-04T13:52:01.540Z */
+/* Updated: 2025-12-04T13:50:26.756Z */
+/* Updated: 2025-12-04T13:32:04.662Z */
+/* Updated: 2025-12-04T13:27:54.415Z */
+/* Updated: 2025-12-04T13:22:34.363Z */
+/* Updated: 2025-12-04T13:17:58.339Z */
+/* Updated: 2025-12-04T12:52:39.182Z */
+/* Updated: 2025-12-04T12:52:33.724Z */
+/* Updated: 2025-12-04T12:52:10.095Z */
+/* Updated: 2025-12-04T12:48:20.296Z */
+/* Updated: 2025-12-04T11:19:58.880Z */
+/* Updated: 2025-12-03T22:35:34.266Z */
+/* Updated: 2025-12-03T22:28:18.697Z */
+/* Updated: 2025-12-03T22:16:48.536Z */
+/* Updated: 2025-12-03T22:09:22.928Z */
+/* Updated: 2025-12-03T22:04:25.795Z */
+/* Updated: 2025-12-03T20:34:11.441Z */
+/* Updated: 2025-12-03T18:53:51.173Z */
+/* Updated: 2025-12-03T18:17:02.733Z */
+/* Updated: 2025-12-03T18:11:47.118Z */
+/* Updated: 2025-12-03T18:07:38.494Z */
+/* Updated: 2025-12-03T18:05:30.970Z */
+/* Updated: 2025-12-03T18:05:03.371Z */
+/* Updated: 2025-12-03T18:01:37.777Z */
+/* Updated: 2025-12-03T17:56:09.339Z */
+/* Updated: 2025-12-03T17:54:23.103Z */
+/* Updated: 2025-12-03T17:52:05.431Z */
+/* Updated: 2025-12-03T17:49:27.747Z */
+/* Updated: 2025-12-03T17:46:08.813Z */
+/* Updated: 2025-12-03T17:43:13.789Z */
+/* Updated: 2025-12-03T17:38:01.049Z */
+/* Updated: 2025-12-03T17:37:19.445Z */
+/* Updated: 2025-12-03T17:37:01.999Z */
+/* Updated: 2025-12-03T17:35:44.268Z */
+/* Updated: 2025-12-03T16:40:17.162Z */
+/* Updated: 2025-12-03T16:36:50.927Z */
+/* Updated: 2025-12-03T14:03:14.650Z */
+/* Updated: 2025-12-03T06:09:31.493Z */
+/* Updated: 2025-12-03T01:26:10.859Z */
+/* Updated: 2025-12-03T01:16:02.466Z */
+/* Updated: 2025-12-03T01:09:25.363Z */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(0.05 0 0);
+  --foreground: oklch(0.90 0.02 70);
+  --card: oklch(0.08 0 0);
+  --card-foreground: oklch(0.90 0.02 70);
+  --popover: oklch(0.08 0 0);
+  --popover-foreground: oklch(0.90 0.02 70);
+  --primary: oklch(0.65 0.10 70);
+  --primary-foreground: oklch(0.05 0 0);
+  --secondary: oklch(0.12 0 0);
+  --secondary-foreground: oklch(0.90 0.02 70);
+  --muted: oklch(0.10 0 0);
+  --muted-foreground: oklch(0.60 0.08 70);
+  --accent: oklch(0.60 0.12 75);
+  --accent-foreground: oklch(0.05 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.15 0 0);
+  --input: oklch(0.15 0 0);
+  --ring: oklch(0.65 0.10 70);
+  --chart-1: oklch(0.65 0.10 70);
+  --chart-2: oklch(0.60 0.12 75);
+  --chart-3: oklch(0.70 0.08 68);
+  --chart-4: oklch(0.62 0.10 72);
+  --chart-5: oklch(0.58 0.09 74);
+  --sidebar: oklch(0.08 0 0);
+  --sidebar-foreground: oklch(0.90 0.02 70);
+  --sidebar-primary: oklch(0.65 0.10 70);
+  --sidebar-primary-foreground: oklch(0.05 0 0);
+  --sidebar-accent: oklch(0.10 0 0);
+  --sidebar-accent-foreground: oklch(0.65 0.10 70);
+  --sidebar-border: oklch(0.15 0 0);
+  --sidebar-ring: oklch(0.65 0.10 70);
+  
+  --gold-dark: oklch(0.55 0.10 70);
+  --gold-medium: oklch(0.65 0.10 70);
+  --gold-light: oklch(0.75 0.08 72);
+  --black-dark: oklch(0.00 0 0);
+  --black-medium: oklch(0.08 0 0);
+  --black-light: oklch(0.15 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  
+  .font-script {
+    font-family: 'Dancing Script', cursive;
+  }
+  
+  .decorative-star {
+    position: absolute;
+    opacity: 0.6;
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-20px) rotate(5deg);
+    }
+  }
+  
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+  
+  @keyframes goldPulse {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.5), 0 0 40px rgba(212, 175, 55, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 40px rgba(212, 175, 55, 0.8), 0 0 80px rgba(212, 175, 55, 0.5);
+    }
+  }
+  
+  @keyframes slideUp {
+    from {
+      transform: translateY(100px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeInScale {
+    from {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  .gold-gradient {
+    background: linear-gradient(135deg, #B8860B 0%, #D4AF37 25%, #C5A572 50%, #D4AF37 75%, #B8860B 100%);
+  }
+  
+  .gold-text-gradient {
+    background: linear-gradient(135deg, #D4AF37, #C5A572, #DAA520);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .black-gradient {
+    background: linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #1a1a1a 100%);
+  }
+}
+
+/* Hide Next.js error overlay portal */
+nextjs-portal {
+  display: none !important;
+}
