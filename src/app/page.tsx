@@ -47,7 +47,7 @@ export default function Home() {
       <main className="relative min-h-screen pt-16">
         {/* Logo en arrière-plan fixe */}
         <div className="fixed inset-0 flex items-center justify-center pointer-events-none z-0">
-          <div className="relative w-[800px] h-[800px] opacity-[0.03]">
+          <div className="relative w-[800px] h-[800px] opacity-[0.08]">
             <Image
               src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/logo-1764781489676.PNG?width=1000&height=1000&resize=contain"
               alt="EverInSite Background"
