@@ -16,9 +16,19 @@ export default function TarifsPage() {
     {
       emoji: "🌐",
       title: "Création de site vitrine",
-      subtitle: "(pros ou particuliers)",
-      price: "Entre 120€ et 400€",
+      subtitle: "(professionnels ou particuliers)",
+      price: "Entre 500€ et 900€",
       description: "Selon : nombre de pages, design, personnalisations, fonctionnalités souhaitées.",
+      included: [
+        "Création du site",
+        "Design personnalisé",
+        "Site livré clé en main",
+        "Mise en ligne sur le compte Vercel du client"
+      ],
+      excluded: [
+        "Hébergement non inclus",
+        "Maintenance technique non incluse"
+      ],
       details: {
         intro: "Un site vitrine sert uniquement à présenter une activité.",
         sections: [
@@ -53,8 +63,17 @@ export default function TarifsPage() {
       emoji: "🛒",
       title: "Site avec fonctionnalités avancées",
       subtitle: "(boutique en ligne, réservations, formulaires complexes…)",
-      price: "Entre 350€ et 800€",
-      description: "",
+      price: "Entre 1 200€ et 2 800€",
+      description: "Développement sur mesure pour des besoins interactifs et e-commerce.",
+      included: [
+        "Fonctionnalités avancées",
+        "Configuration complète",
+        "Livraison sur le compte Vercel du client"
+      ],
+      excluded: [
+        "Hébergement non inclus",
+        "Maintenance technique non incluse"
+      ],
       details: {
         intro: "Un site avancé sert à interagir, automatiser ou vendre.",
         sections: [
@@ -87,39 +106,26 @@ export default function TarifsPage() {
       }
     },
     {
-      emoji: "🔧",
-      title: "Maintenance mensuelle",
-      subtitle: "(optionnelle)",
-      price: "Entre 15€ et 40€ / mois",
-      description: "(selon la fréquence des modifications, mises à jour, sauvegardes…)",
-      details: {
-        intro: "Maintenance mensuelle (optionnelle)",
-        sections: [
-          {
-            title: "",
-            items: [
-              "Entre 15€ et 40€/mois",
-              "Comprend : mises à jour, sauvegardes, petites modifications, optimisation et surveillance du site.",
-              "Le tarif varie selon la fréquence et le volume d'interventions souhaitées."
-            ]
-          }
-        ]
-      }
-    },
-    {
       emoji: "📝",
-      title: "Ajout de nouvelles pages",
-      subtitle: "",
-      price: "Entre 20€ et 60€ par page",
-      description: "(selon le contenu, images, texte ou création graphique)",
+      title: "Ajout de contenu / modifications",
+      subtitle: "(ex : ajout de photos, textes, pages, sections)",
+      price: "Entre 55€ et 110€ par intervention",
+      description: "",
+      included: [
+        "Modifications réalisées par le prestataire",
+        "Facturation à l’acte, sans abonnement"
+      ],
+      warning: "⚠️ Les modifications sont possibles uniquement si le site reste hébergé sur Vercel.",
       details: {
-        intro: "Ajout de nouvelles pages",
+        intro: "Modifications et ajouts sur mesure",
         sections: [
           {
             title: "",
             items: [
-              "Entre 20€ et 60€ par page",
-              "Selon la quantité de contenu (texte, images), la mise en forme et les besoins graphiques éventuels."
+              "Ajout de nouvelles sections ou pages",
+              "Mise à jour des textes et images",
+              "Optimisation de contenu existant",
+              "Tarif basé sur la complexité de l'intervention"
             ]
           }
         ]
@@ -164,86 +170,156 @@ export default function TarifsPage() {
                 }}
               >
                 <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
+                  <div className="flex flex-col md:flex-row items-start gap-6">
                     <div className="text-4xl flex-shrink-0" style={{ color: '#D4AF37' }}>
                       {option.emoji}
                     </div>
-                    <div className="flex-1">
-                      <h3 className="text-2xl font-bold mb-1" style={{ color: '#D4AF37' }}>
-                        {option.title}
-                      </h3>
-                      {option.subtitle && (
-                        <p className="text-gray-400 text-sm mb-3">
-                          {option.subtitle}
-                        </p>
-                      )}
-                      <p className="text-2xl font-bold mb-2" style={{ color: '#DAA520' }}>
-                        {option.price}
+                    <div className="flex-1 w-full">
+                      <div className="flex justify-between items-start gap-4 mb-4">
+                        <div>
+                          <h3 className="text-2xl font-bold mb-1" style={{ color: '#D4AF37' }}>
+                            {option.title}
+                          </h3>
+                          {option.subtitle && (
+                            <p className="text-gray-400 text-sm">
+                              {option.subtitle}
+                            </p>
+                          )}
+                        </div>
+                        <Dialog open={openDialog === index} onOpenChange={(open) => setOpenDialog(open ? index : null)}>
+                          <DialogTrigger asChild>
+                            <Button
+                              size="sm"
+                              variant="outline"
+                              className="flex items-center gap-2 border-2 hover:scale-105 transition-all whitespace-nowrap"
+                              style={{ 
+                                borderColor: 'rgba(212, 175, 55, 0.5)',
+                                color: '#D4AF37',
+                                backgroundColor: 'rgba(212, 175, 55, 0.1)'
+                              }}
+                            >
+                              <Info className="w-4 h-4" />
+                              Détails
+                            </Button>
+                          </DialogTrigger>
+                          <DialogContent 
+                            className="max-w-2xl max-h-[80vh] overflow-y-auto"
+                            style={{ 
+                              backgroundColor: 'rgba(0, 0, 0, 0.95)', 
+                              borderColor: 'rgba(212, 175, 55, 0.5)',
+                              border: '2px solid'
+                            }}
+                          >
+                            <DialogHeader>
+                              <DialogTitle className="text-2xl font-bold flex items-center gap-3" style={{ color: '#D4AF37' }}>
+                                <span className="text-3xl">{option.emoji}</span>
+                                {option.title}
+                              </DialogTitle>
+                            </DialogHeader>
+                            <div className="space-y-6 pt-4">
+                              <p className="text-lg text-gray-300 font-semibold">
+                                {option.details.intro}
+                              </p>
+                              {option.details.sections.map((section, sIdx) => (
+                                <div key={sIdx} className="space-y-3">
+                                  {section.title && (
+                                    <h4 className="text-lg font-semibold" style={{ color: '#D4AF37' }}>
+                                      {section.title}
+                                    </h4>
+                                  )}
+                                  <ul className="space-y-2">
+                                    {section.items.map((item, iIdx) => (
+                                      <li key={iIdx} className="text-gray-300 leading-relaxed pl-4">
+                                        {item}
+                                      </li>
+                                    ))}
+                                  </ul>
+                                </div>
+                              ))}
+                            </div>
+                          </DialogContent>
+                        </Dialog>
+                      </div>
+
+                      <p className="text-3xl font-bold mb-4" style={{ color: '#DAA520' }}>
+                        👉 <span className="text-2xl align-middle ml-2">{option.price}</span>
                       </p>
+
                       {option.description && (
-                        <p className="text-gray-300 leading-relaxed">
+                        <p className="text-gray-300 mb-6 leading-relaxed">
                           {option.description}
                         </p>
                       )}
+
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        {option.included && (
+                          <div className="space-y-2">
+                            {option.included.map((item, iIdx) => (
+                              <p key={iIdx} className="text-gray-300 flex items-start gap-2">
+                                <span className="text-green-500">✔️</span> {item}
+                              </p>
+                            ))}
+                          </div>
+                        )}
+                        {option.excluded && (
+                          <div className="space-y-2">
+                            {option.excluded.map((item, eIdx) => (
+                              <p key={eIdx} className="text-gray-300 flex items-start gap-2">
+                                <span className="text-red-500">❌</span> {item}
+                              </p>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+
+                      {option.warning && (
+                        <p className="mt-6 text-gray-300 italic">
+                          {option.warning}
+                        </p>
+                      )}
                     </div>
-                    <Dialog open={openDialog === index} onOpenChange={(open) => setOpenDialog(open ? index : null)}>
-                      <DialogTrigger asChild>
-                        <Button
-                          size="sm"
-                          variant="outline"
-                          className="flex items-center gap-2 border-2 hover:scale-105 transition-all"
-                          style={{ 
-                            borderColor: 'rgba(212, 175, 55, 0.5)',
-                            color: '#D4AF37',
-                            backgroundColor: 'rgba(212, 175, 55, 0.1)'
-                          }}
-                        >
-                          <Info className="w-4 h-4" />
-                          Détails
-                        </Button>
-                      </DialogTrigger>
-                      <DialogContent 
-                        className="max-w-2xl max-h-[80vh] overflow-y-auto"
-                        style={{ 
-                          backgroundColor: 'rgba(0, 0, 0, 0.95)', 
-                          borderColor: 'rgba(212, 175, 55, 0.5)',
-                          border: '2px solid'
-                        }}
-                      >
-                        <DialogHeader>
-                          <DialogTitle className="text-2xl font-bold flex items-center gap-3" style={{ color: '#D4AF37' }}>
-                            <span className="text-3xl">{option.emoji}</span>
-                            {option.title}
-                          </DialogTitle>
-                        </DialogHeader>
-                        <div className="space-y-6 pt-4">
-                          <p className="text-lg text-gray-300 font-semibold">
-                            {option.details.intro}
-                          </p>
-                          {option.details.sections.map((section, sIdx) => (
-                            <div key={sIdx} className="space-y-3">
-                              {section.title && (
-                                <h4 className="text-lg font-semibold" style={{ color: '#D4AF37' }}>
-                                  {section.title}
-                                </h4>
-                              )}
-                              <ul className="space-y-2">
-                                {section.items.map((item, iIdx) => (
-                                  <li key={iIdx} className="text-gray-300 leading-relaxed pl-4">
-                                    {item}
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                          ))}
-                        </div>
-                      </DialogContent>
-                    </Dialog>
                   </div>
                 </CardContent>
               </Card>
             ))}
           </div>
+
+          {/* Important Info Note */}
+          <Card 
+            className="backdrop-blur-sm border-2 mb-12"
+            style={{ 
+              backgroundColor: 'rgba(212, 175, 55, 0.05)', 
+              borderColor: 'rgba(212, 175, 55, 0.4)',
+              boxShadow: '0 10px 30px rgba(212,175,55,0.1)'
+            }}
+          >
+            <CardContent className="p-8">
+              <div className="flex items-start gap-6">
+                <span className="text-3xl">ℹ️</span>
+                <div className="space-y-4">
+                  <h4 className="text-2xl font-bold" style={{ color: '#D4AF37' }}>Informations importantes</h4>
+                  <ul className="space-y-3">
+                    <li className="text-gray-300 text-lg flex items-start gap-2">
+                      <span className="text-gold-500">•</span>
+                      Le site est hébergé exclusivement sur Vercel.
+                    </li>
+                    <li className="text-gray-300 text-lg flex items-start gap-2">
+                      <span className="text-gold-500">•</span>
+                      L’hébergement est à la charge du client.
+                    </li>
+                    <li className="text-gray-300 text-lg flex items-start gap-2">
+                      <span className="text-gold-500">•</span>
+                      Les modifications du site sont réalisées uniquement par le prestataire.
+                    </li>
+                    <li className="text-gray-300 text-lg flex items-start gap-2">
+                      <span className="text-gold-500">•</span>
+                      Si le site est hébergé ailleurs que sur Vercel, les modifications ne pourront plus être assurées.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
 
           {/* Info Note */}
           <Card 

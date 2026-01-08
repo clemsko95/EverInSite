@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: ['/api/', '/maintenance/'],
+      disallow: ['/api/'],
     },
     sitemap: 'https://everinsite.vercel.app/sitemap.xml',
   }

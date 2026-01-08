@@ -18,11 +18,12 @@ export default function ToutesActivitesPage() {
         { title: "Crèche / école / classe", icon: "👦", description: "Plateforme pour votre établissement scolaire ou classe" },
         { title: "Association animale (adoption, dons)", icon: "🐶", description: "Site pour refuge d'animaux, adoptions et collecte de dons" },
         { title: "Team gaming / e-sport", icon: "🎮", description: "Site pour votre équipe de gaming avec classements et tournois" },
-        { title: "Groupe musical / danse", icon: "🎤", description: "Site pour votre ensemble musical ou troupe de danse" }
+        { title: "Groupe musical / danse", icon: "🎤", description: "Site pour votre ensemble musical ou troupe de danse" },
+        { title: "Association caritative", icon: "🤝", description: "Plateforme pour collecter des dons et présenter vos actions solidaires" }
       ]
     },
     {
-      category: "Professionnels",
+      category: "Professionnels & Services",
       color: "from-[#C5A572] via-[#D4AF37] to-[#C5A572]",
       items: [
         { title: "Site vitrine professionnel", icon: "💼", description: "Présentez vos services avec élégance et professionnalisme" },
@@ -32,7 +33,46 @@ export default function ToutesActivitesPage() {
         { title: "Location saisonnière (Airbnb / gîte)", icon: "🏠", description: "Présentez votre location de vacances avec photos et réservations" },
         { title: "Artisans (plombier, peintre, maçon, etc.)", icon: "👷", description: "Site pour artisan avec portfolio de réalisations" },
         { title: "Coiffure / esthétique / beauté", icon: "💇", description: "Site pour salon de coiffure ou institut de beauté" },
-        { title: "Auto-entrepreneurs de tous secteurs", icon: "💼", description: "Site professionnel pour freelances et entrepreneurs" }
+        { title: "Auto-entrepreneurs de tous secteurs", icon: "💼", description: "Site professionnel pour freelances et entrepreneurs" },
+        { title: "Garage / Mécanique", icon: "🚗", description: "Présentez vos services d'entretien et réparation automobile" },
+        { title: "Services de sécurité", icon: "🛡️", description: "Site pour agence de gardiennage et sécurité" }
+      ]
+    },
+    {
+      category: "Hôtellerie & Restauration",
+      color: "from-[#B8860B] via-[#D4AF37] to-[#B8860B]",
+      items: [
+        { title: "Restaurant / Café / Bar", icon: "🍽️", description: "Présentez votre carte, votre ambiance et facilitez les réservations" },
+        { title: "Hôtel / Chambre d'hôtes", icon: "🏨", description: "Vitrine pour vos chambres, services et environnement" },
+        { title: "Food Truck / Traiteur", icon: "🚚", description: "Informez sur vos emplacements et prestations événementielles" }
+      ]
+    },
+    {
+      category: "Santé & Juridique",
+      color: "from-[#DAA520] via-[#D4AF37] to-[#DAA520]",
+      items: [
+        { title: "Cabinet Médical / Dentaire", icon: "🏥", description: "Présentation du cabinet, des praticiens et informations pratiques" },
+        { title: "Avocat / Notaire", icon: "⚖️", description: "Site institutionnel pour votre cabinet et vos domaines d'expertise" },
+        { title: "Psychologue / Thérapeute", icon: "🧠", description: "Espace de confiance pour présenter votre approche et vos consultations" },
+        { title: "Pharmacie", icon: "💊", description: "Informations pratiques, horaires et services de santé de proximité" }
+      ]
+    },
+    {
+      category: "Immobilier & Architecture",
+      color: "from-[#C5A572] via-[#DAA520] to-[#C5A572]",
+      items: [
+        { title: "Agence immobilière", icon: "🏠", description: "Vitrine pour vos mandats et services de transaction" },
+        { title: "Architecte / Décorateur", icon: "📐", description: "Portfolio de vos projets, plans et réalisations d'intérieur" },
+        { title: "Entreprise de BTP / Travaux", icon: "🏗️", description: "Présentez vos chantiers et demandez des devis en ligne" }
+      ]
+    },
+    {
+      category: "Éducation & Formation",
+      color: "from-[#B8860B] via-[#D4AF37] to-[#B8860B]",
+      items: [
+        { title: "Formation en ligne / E-learning", icon: "💻", description: "Plateforme pour vendre et diffuser vos cours et formations" },
+        { title: "Soutien scolaire", icon: "📚", description: "Site pour professeurs particuliers ou centres d'aide aux devoirs" },
+        { title: "Auto-école", icon: "🚗", description: "Présentez vos forfaits permis et facilitez l'inscription" }
       ]
     },
     {
@@ -95,63 +135,65 @@ export default function ToutesActivitesPage() {
           </div>
         </div>
 
-        <section className="relative py-20 px-4 sm:px-6 lg:px-8 z-10" style={{ background: 'linear-gradient(to bottom right, #000000, #0a0a0a, #1a1a1a)' }}>
+        <section className="relative py-12 sm:py-20 px-4 sm:px-6 lg:px-8 z-10" style={{ background: 'linear-gradient(to bottom right, #000000, #0a0a0a, #1a1a1a)' }}>
           <div className="max-w-7xl mx-auto">
             <Link href="/">
-              <Button variant="ghost" className="mb-6 border" style={{ color: '#D4AF37', borderColor: 'rgba(212, 175, 55, 0.3)', backgroundColor: 'rgba(212, 175, 55, 0.05)' }}>
+              <Button variant="ghost" className="mb-4 sm:mb-6 border text-sm sm:text-base" style={{ color: '#D4AF37', borderColor: 'rgba(212, 175, 55, 0.3)', backgroundColor: 'rgba(212, 175, 55, 0.05)' }}>
                 <ArrowLeft className="mr-2 h-4 w-4" />
                 Retour
               </Button>
             </Link>
             
-            <div className="text-center mb-12">
-              <h1 className="text-5xl sm:text-6xl font-script font-bold gold-text-gradient mb-6">
+            <div className="text-center mb-8 sm:mb-12">
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-script font-bold gold-text-gradient mb-4 sm:mb-6">
                 Toutes les activités 🌟
               </h1>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+              <p className="text-base sm:text-xl text-gray-300 max-w-3xl mx-auto mb-6 sm:mb-8 px-2">
                 Découvrez tous les types de sites que je peux créer pour vous
               </p>
               
               {/* Message personnalisé */}
-              <div className="max-w-4xl mx-auto backdrop-blur-sm rounded-2xl p-8 shadow-2xl border-2" style={{ background: 'linear-gradient(to right, rgba(212,175,55,0.15), rgba(197,165,114,0.15), rgba(212,175,55,0.15))', borderColor: 'rgba(212, 175, 55, 0.3)', boxShadow: '0 20px 50px rgba(212,175,55,0.2)' }}>
-                <div className="text-4xl mb-4">💡</div>
-                <h2 className="text-2xl font-bold gold-text-gradient mb-3">
+              <div className="max-w-4xl mx-auto backdrop-blur-sm rounded-2xl p-4 sm:p-6 lg:p-8 shadow-2xl border-2" style={{ background: 'linear-gradient(to right, rgba(212,175,55,0.15), rgba(197,165,114,0.15), rgba(212,175,55,0.15))', borderColor: 'rgba(212, 175, 55, 0.3)', boxShadow: '0 20px 50px rgba(212,175,55,0.2)' }}>
+                <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">💡</div>
+                <h2 className="text-lg sm:text-xl lg:text-2xl font-bold gold-text-gradient mb-2 sm:mb-3 px-2">
                   Vous ne trouvez pas ce que vous cherchez ?
                 </h2>
-                <p className="text-lg text-gray-300 leading-relaxed mb-4">
+                <p className="text-sm sm:text-base lg:text-lg text-gray-300 leading-relaxed mb-3 sm:mb-4 px-2">
                   <strong style={{ color: '#D4AF37' }}>Chaque site est unique et personnalisé !</strong> Si vous avez un projet spécifique en tête qui n&apos;est pas dans cette liste, 
                   <span className="font-semibold" style={{ color: '#D4AF37' }}> contactez-moi</span> et je créerai exactement le site dont vous rêvez.
                 </p>
-                <p className="text-base text-gray-400 italic">
+                <p className="text-xs sm:text-sm lg:text-base text-gray-400 italic mb-4 sm:mb-6 px-2">
                   ✨ Aucune limite à votre imagination - je m&apos;adapte à tous vos besoins !
                 </p>
-                <Link href="/contact">
-                  <Button size="lg" className="mt-6 gold-gradient text-black font-semibold hover:scale-105 transition-all shadow-lg" style={{ boxShadow: '0 10px 30px rgba(212,175,55,0.5)' }}>
-                    Contactez-moi pour un projet sur mesure 💌
+                <div className="px-2">
+                  <Button asChild size="lg" className="w-full text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-4 sm:py-5 lg:py-6 gold-gradient text-black font-semibold hover:scale-105 transition-all shadow-lg" style={{ boxShadow: '0 10px 30px rgba(212,175,55,0.5)' }}>
+                    <Link href="/contact">Contactez-moi pour un projet sur mesure 💌</Link>
                   </Button>
-                </Link>
+                </div>
               </div>
             </div>
 
             {/* Liste de toutes les activités par catégorie */}
-            <div className="space-y-16">
+            <div className="space-y-12 sm:space-y-16">
               {allActivities.map((category, categoryIndex) => (
                 <div key={categoryIndex}>
-                  <div className="text-center mb-8">
-                    <h2 className={`text-3xl font-bold bg-gradient-to-r ${category.color} bg-clip-text text-transparent inline-block`}>
+                  <div className="text-center mb-6 sm:mb-8">
+                    <h2 className={`text-2xl sm:text-3xl font-bold bg-gradient-to-r ${category.color} bg-clip-text text-transparent inline-block px-2`}>
                       {category.category}
                     </h2>
                   </div>
                   
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                     {category.items.map((item, index) => (
                       <Card key={index} className="hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 backdrop-blur-sm group" style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)', borderColor: 'rgba(212, 175, 55, 0.3)', boxShadow: '0 10px 30px rgba(212,175,55,0.2)' }}>
-                        <CardContent className="p-6">
-                          <div className="text-5xl mb-4 text-center group-hover:scale-110 transition-transform">{item.icon}</div>
-                          <h3 className="text-xl font-bold mb-3 text-center" style={{ color: '#D4AF37' }}>
+                        <CardContent className="p-4 sm:p-6 flex flex-col items-center">
+                          <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl flex items-center justify-center mb-4 border-2 bg-black/40 group-hover:scale-110 transition-transform shadow-lg group-hover:shadow-[0_0_20px_rgba(212,175,55,0.4)]" style={{ borderColor: 'rgba(212, 175, 55, 0.3)' }}>
+                            <span className="text-3xl sm:text-4xl">{item.icon}</span>
+                          </div>
+                          <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-center" style={{ color: '#D4AF37' }}>
                             {item.title}
                           </h3>
-                          <p className="text-gray-300 text-center leading-relaxed text-sm">
+                          <p className="text-gray-300 text-center leading-relaxed text-xs sm:text-sm">
                             {item.description}
                           </p>
                         </CardContent>
@@ -163,19 +205,19 @@ export default function ToutesActivitesPage() {
             </div>
 
             {/* CTA final */}
-            <div className="text-center mt-16 p-12 backdrop-blur-sm rounded-3xl shadow-2xl border-2" style={{ background: 'linear-gradient(to bottom right, rgba(212,175,55,0.1), rgba(197,165,114,0.05))', borderColor: 'rgba(212, 175, 55, 0.3)', boxShadow: '0 20px 50px rgba(212,175,55,0.2)' }}>
-              <div className="text-6xl mb-4">🚀</div>
-              <h2 className="text-3xl font-bold gold-text-gradient mb-4">
+            <div className="text-center mt-12 sm:mt-16 p-6 sm:p-8 lg:p-12 backdrop-blur-sm rounded-3xl shadow-2xl border-2" style={{ background: 'linear-gradient(to bottom right, rgba(212,175,55,0.1), rgba(197,165,114,0.05))', borderColor: 'rgba(212, 175, 55, 0.3)', boxShadow: '0 20px 50px rgba(212,175,55,0.2)' }}>
+              <div className="text-5xl sm:text-6xl mb-3 sm:mb-4">🚀</div>
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold gold-text-gradient mb-3 sm:mb-4 px-2">
                 Prêt à créer votre site ?
               </h2>
-              <p className="text-lg text-gray-300 mb-6 max-w-2xl mx-auto">
+              <p className="text-sm sm:text-base lg:text-lg text-gray-300 mb-4 sm:mb-6 max-w-2xl mx-auto px-2">
                 Que votre projet soit dans cette liste ou complètement unique, je suis là pour le réaliser avec vous !
               </p>
-              <Link href="/contact">
-                <Button size="lg" className="text-lg px-8 py-6 gold-gradient text-black font-semibold hover:scale-105 transition-all shadow-lg" style={{ boxShadow: '0 10px 30px rgba(212,175,55,0.5)' }}>
-                  Démarrer mon projet ✨
+              <div className="flex justify-center px-2">
+                <Button asChild size="lg" className="w-full sm:w-auto text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-4 sm:py-5 lg:py-6 gold-gradient text-black font-semibold hover:scale-105 transition-all shadow-lg" style={{ boxShadow: '0 10px 30px rgba(212,175,55,0.5)' }}>
+                  <Link href="/contact">Démarrer mon projet ✨</Link>
                 </Button>
-              </Link>
+              </div>
             </div>
           </div>
         </section>

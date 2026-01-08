@@ -9,16 +9,10 @@ import WelcomeOverlay from "@/components/WelcomeOverlay"
 import Image from "next/image"
 
 export default function Home() {
-  const categories = [
+  const quickActions = [
     {
       title: "Toutes les activités",
       description: "Découvrez la liste complète de tous les types de sites que je peux créer pour vous",
-      details: [
-        "🌟 Plus de 40 types de sites différents",
-        "💡 Projets personnalisés sur mesure",
-        "✨ Aucune limite à votre imagination",
-        "🎯 Trouvez exactement ce qu'il vous faut"
-      ],
       href: "/toutes-activites",
       gradient: "from-[#B8860B] via-[#D4AF37] to-[#B8860B]",
       emoji: "📋"
@@ -26,12 +20,6 @@ export default function Home() {
     {
       title: "Contactez-moi",
       description: "Parlez-moi de votre projet et je créerai votre site web unique et personnalisé",
-      details: [
-        "✉️ Formulaire de contact simple",
-        "⚡ Réponse rapide garantie",
-        "🎯 Devis personnalisé gratuit",
-        "🤝 Accompagnement complet"
-      ],
       href: "/contact",
       gradient: "from-[#C5A572] via-[#D4AF37] to-[#C5A572]",
       emoji: "📬"
@@ -79,49 +67,43 @@ export default function Home() {
             <p className="text-xl sm:text-2xl text-gray-300 max-w-3xl mx-auto mb-12">
               Partagez-moi votre vision et je donnerai vie au site web de vos rêves : professionnel, créatif, personnel ou événementiel
             </p>
-            <Button asChild size="lg" className="text-lg px-8 py-6 rounded-full shadow-2xl transition-all gold-gradient text-black font-semibold hover:scale-105" style={{ boxShadow: '0 20px 50px rgba(212,175,55,0.5)' }}>
-              <Link href="/contact">Contactez-moi 💌</Link>
-            </Button>
+            
+            <div className="flex flex-wrap gap-4 justify-center">
+              <Button asChild size="lg" className="text-lg px-8 py-6 rounded-full shadow-2xl transition-all gold-gradient text-black font-semibold hover:scale-105" style={{ boxShadow: '0 20px 50px rgba(212,175,55,0.5)' }}>
+                <Link href="/contact">
+                  Contactez-moi 💌
+                </Link>
+              </Button>
+            </div>
           </div>
         </section>
 
-        {/* Categories Grid */}
-        <section className="relative py-20 px-4 sm:px-6 lg:px-8 z-10" style={{ background: 'linear-gradient(to bottom right, #0a0a0a, #000000, #0a0a0a)' }}>
+
+        {/* Quick Actions Grid */}
+        <section className="relative py-20 px-4 sm:px-6 lg:px-8 z-10" style={{ background: 'linear-gradient(to bottom right, #000000, #0a0a0a, #000000)' }}>
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-4xl font-script font-bold text-center mb-4 gold-text-gradient">
-              Explorez mes services 🌟
+            <h2 className="text-4xl font-script font-bold text-center mb-12 gold-text-gradient">
+              Découvrez mes services 🌟
             </h2>
-            <p className="text-center text-gray-400 mb-12 text-lg">
-              Découvrez toutes les activités que je propose et contactez-moi pour votre projet
-            </p>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              {categories.map((category) => (
-                <Link key={category.href} href={category.href}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {quickActions.map((action) => (
+                <Link key={action.href} href={action.href}>
                   <Card className="h-full hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 overflow-hidden group backdrop-blur-sm" style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)', borderColor: 'rgba(212, 175, 55, 0.3)', boxShadow: '0 10px 30px rgba(212,175,55,0.2)' }}>
-                    <div className={`h-3 bg-gradient-to-r ${category.gradient}`}></div>
+                    <div className={`h-3 bg-gradient-to-r ${action.gradient}`}></div>
                     <CardContent className="p-6">
-                      <div className={`w-20 h-20 rounded-2xl bg-gradient-to-r ${category.gradient} flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-3 transition-all shadow-lg`} style={{ boxShadow: '0 10px 25px rgba(212,175,55,0.5)' }}>
-                        <span className="text-4xl">{category.emoji}</span>
+                      <div className={`w-20 h-20 rounded-2xl bg-gradient-to-r ${action.gradient} flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-3 transition-all shadow-lg`} style={{ boxShadow: '0 10px 25px rgba(212,175,55,0.5)' }}>
+                        <span className="text-4xl">{action.emoji}</span>
                       </div>
                       <h3 className="text-2xl font-bold mb-3 group-hover:text-[#C5A572] transition-colors" style={{ color: '#D4AF37' }}>
-                        {category.title}
+                        {action.title}
                       </h3>
                       <p className="text-gray-300 leading-relaxed mb-4 font-medium">
-                        {category.description}
+                        {action.description}
                       </p>
                       
-                      {/* Details list with emojis */}
-                      <div className="space-y-2 mt-4 pt-4" style={{ borderTop: '1px solid rgba(212, 175, 55, 0.2)' }}>
-                        {category.details.map((detail, index) => (
-                          <div key={index} className="flex items-start gap-2 text-sm text-gray-400">
-                            <span className="mt-0.5">{detail}</span>
-                          </div>
-                        ))}
-                      </div>
-                      
                       <div className="mt-6 font-semibold flex items-center gap-2 group-hover:gap-3 transition-all" style={{ color: '#DAA520' }}>
-                        En savoir plus
+                        Découvrir
                         <span className="group-hover:translate-x-1 transition-transform">→</span>
                       </div>
                     </CardContent>
@@ -133,7 +115,7 @@ export default function Home() {
         </section>
 
         {/* Features Section */}
-        <section className="relative py-20 px-4 sm:px-6 lg:px-8 z-10" style={{ background: 'linear-gradient(to bottom right, #000000, #0a0a0a, #1a1a1a)' }}>
+        <section className="relative py-20 px-4 sm:px-6 lg:px-8 z-10" style={{ background: 'linear-gradient(to bottom right, #0a0a0a, #000000, #1a1a1a)' }}>
           <div className="max-w-7xl mx-auto text-center">
             <h2 className="text-4xl font-script font-bold mb-12 gold-text-gradient">
               Pourquoi me choisir ? 💎
@@ -158,6 +140,26 @@ export default function Home() {
                 <p className="text-gray-300 leading-relaxed">Du site professionnel au site émotionnel, je m'adapte à tous vos besoins et envies avec passion</p>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Final CTA */}
+        <section className="relative py-20 px-4 sm:px-6 lg:px-8 z-10" style={{ background: 'linear-gradient(to bottom right, #000000, #0a0a0a, #000000)' }}>
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl font-script font-bold gold-text-gradient mb-6">
+              Prêt à créer votre site de rêve ? 🎯
+            </h2>
+            <p className="text-xl text-gray-300 mb-8">
+              Contactez-moi dès maintenant et obtenez un devis personnalisé gratuit sous 24h
+            </p>
+            <Button 
+              asChild
+              size="lg" 
+              className="text-lg px-8 py-6 rounded-full gold-gradient text-black font-semibold hover:scale-105 transition-all shadow-2xl"
+              style={{ boxShadow: '0 20px 50px rgba(212,175,55,0.5)' }}
+            >
+              <Link href="/contact">Démarrer mon projet maintenant ✨</Link>
+            </Button>
           </div>
         </section>
       </main>

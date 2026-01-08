@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import VisualEditsMessenger from "../visual-edits/VisualEditsMessenger";
+import { VisualEditsMessenger } from "orchids-visual-edits";
 import ErrorReporter from "@/components/ErrorReporter";
 import Script from "next/script";
 import { Toaster } from "@/components/ui/sonner";
 
+// Force redeploy - Fixed Google Search Console verification meta tag format
 export const metadata: Metadata = {
   metadataBase: new URL('https://everinsite.vercel.app'),
   title: {
@@ -27,9 +28,6 @@ export const metadata: Metadata = {
   authors: [{ name: "EverInSite" }],
   creator: "EverInSite",
   publisher: "EverInSite",
-  verification: {
-    google: 'google387f99f'
-  },
   openGraph: {
     type: 'website',
     locale: 'fr_FR',
@@ -58,8 +56,8 @@ export const metadata: Metadata = {
       follow: true,
       'max-video-preview': -1,
       'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
+      'max-snippet': -1
+    }
   },
   alternates: {
     canonical: 'https://everinsite.vercel.app'
@@ -72,34 +70,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr">
-      <head>
-        <link rel="canonical" href="https://everinsite.vercel.app" />
-      </head>
+    <html lang="en">
       <body className="antialiased">
-        <ErrorReporter />
         <Script
-          id="structured-data"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "ProfessionalService",
-              "name": "EverInSite",
-              "description": "Création de sites web modernes et personnalisés pour tous types de projets",
-              "url": "https://everinsite.vercel.app",
-              "logo": "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/logo-1764781489676.PNG",
-              "priceRange": "$$",
-              "areaServed": "FR",
-              "serviceType": ["Création de sites web", "Web design", "Développement web"],
-              "contactPoint": {
-                "@type": "ContactPoint",
-                "contactType": "customer service",
-                "availableLanguage": "French"
-              }
-            })
-          }}
+          id="orchids-browser-logs"
+          src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/scripts/orchids-browser-logs.js"
+          strategy="afterInteractive"
+          data-orchids-project-id="6bd7d00a-79da-4038-9e6d-d6356c723130"
         />
+        <ErrorReporter />
         <Script
           src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/scripts//route-messenger.js"
           strategy="afterInteractive"

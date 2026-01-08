@@ -12,84 +12,81 @@ export default function InformationsPage() {
       title: "1. Informations générales",
       items: [
         "👤 Nom / Prénom",
-        "📛 Nom de votre entreprise / marque (si pro)",
-        "🏷️ Votre slogan (optionnel)",
-        "📍 Localisation (si utile)"
+        "📛 Nom de votre entreprise / marque (si professionnel)",
+        "🏷️ Slogan (optionnel)",
+        "📍 Localisation (si utile pour le contenu du site)"
       ]
     },
     {
       title: "2. Votre activité",
       items: [
-        "📝 Description claire de ce que vous faites",
-        "🎯 Vos objectifs (vendre, présenter, attirer des clients, portfolio…)",
-        "⭐ Vos forces / valeurs / spécialités"
+        "📝 Description claire de votre activité",
+        "🎯 Objectifs du site (présenter, vendre, générer des contacts, portfolio, etc.)",
+        "⭐ Vos valeurs, points forts ou spécialités"
       ]
     },
     {
       title: "3. Contenu texte",
-      description: "📝 Les textes complets que vous souhaitez voir sur le site :",
+      description: "📝 Les textes à intégrer sur le site (si disponibles) :",
       items: [
         "• Présentation",
         "• Services / prestations",
         "• Tarifs (si souhaité)",
-        "• À propos / histoire",
-        "• Questions fréquentes (FAQ)",
-        "• Mentions légales / CGV (si e-commerce)"
+        "• À propos",
+        "• FAQ (optionnelle)",
+        "• Mentions légales / CGV (si nécessaires)"
       ],
-      note: "(Si vous n'en avez pas, je peux vous aider à les rédiger.)"
+      note: "👉 Si vous n’avez pas les textes, je peux vous aider à les rédiger."
     },
     {
-      title: "4. Images & médias",
+      title: "4. Images & identité visuelle",
       items: [
-        "🖼️ Photos (de vous, de vos produits, de vos services, de votre établissement…)",
-        "🎥 Vidéos (si vous en avez)",
-        "🎨 Couleurs / styles que vous aimez",
-        "🔤 Police / ambiance souhaitée (moderne, chic, fun, minimaliste…)"
+        "🖼️ Photos (vous, vos produits, vos services, votre activité…)",
+        "🎥 Vidéos (si disponibles)",
+        "🎨 Couleurs ou styles souhaités",
+        "🔤 Ambiance générale (moderne, minimaliste, chic, dynamique, etc.)"
       ]
     },
     {
       title: "5. Réseaux sociaux & liens",
       items: [
-        "📲 Vos réseaux sociaux (Instagram, Facebook, TikTok, etc.)",
-        "🔗 Liens utiles (Google Maps, calendriers, booking…)"
+        "📲 Liens vers vos réseaux sociaux",
+        "🔗 Liens utiles (Google Maps, prise de rendez-vous, documents, etc.)"
       ]
     },
     {
       title: "6. Fonctionnalités souhaitées",
-      description: "Cochez / indiquez ce dont vous avez besoin :",
+      description: "Merci d’indiquer les fonctionnalités nécessaires :",
       items: [
-        "🛒 Boutique en ligne",
-        "📅 Prise de rendez-vous",
         "🧾 Formulaire de contact",
-        "💬 Chat en direct",
-        "🖼️ Portfolio / galerie photos",
-        "📁 Téléchargements (catalogues, fichiers…)",
+        "📅 Prise de rendez-vous",
+        "🛒 Boutique en ligne",
+        "🖼️ Galerie / portfolio",
+        "📁 Téléchargement de fichiers",
         "🔐 Espace membre",
-        "➕ Autres besoins spécifiques…"
+        "➕ Autres besoins spécifiques"
       ]
     },
     {
-      title: "7. Modèles inspirants",
+      title: "7. Inspirations",
       items: [
-        "📌 Screenshots ou liens vers des sites que vous aimez",
-        "🖌️ Ce que vous aimez / n'aimez pas (couleurs, style, structure…)"
+        "📌 Liens ou captures de sites que vous aimez",
+        "🖌️ Éléments appréciés ou à éviter (couleurs, styles, structure…)"
       ]
     },
     {
-      title: "8. Informations techniques",
-      description: "(Si vous en avez déjà)",
+      title: "8. Nom de domaine (si existant)",
       items: [
-        "🌐 Nom de domaine",
-        "🏠 Hébergement",
-        "📧 Adresse email professionnelle"
+        "🌐 Nom de domaine (si vous en possédez déjà un)",
+        "👉 L’hébergement et la configuration technique ne sont pas inclus."
       ]
     },
     {
-      title: "9. Contact",
+      title: "9. Informations de contact",
       items: [
-        "📞 Téléphone",
-        "📧 Email",
-        "🕑 Horaires (si entreprise)"
+        "📞 Numéro de téléphone",
+        "📧 Adresse email",
+        "🕑 Horaires (si applicable)"
       ]
     }
   ]
@@ -159,7 +156,26 @@ export default function InformationsPage() {
             ))}
           </div>
 
-          {/* Conclusion Card */}
+          {/* Important Section */}
+          <Card 
+            className="backdrop-blur-sm border-2 mb-6"
+            style={{ 
+              backgroundColor: 'rgba(212, 175, 55, 0.05)', 
+              borderColor: 'rgba(212, 175, 55, 0.3)',
+            }}
+          >
+            <CardContent className="p-6">
+              <h3 className="text-2xl font-bold mb-4" style={{ color: '#D4AF37' }}>
+                ℹ️ Important
+              </h3>
+              <p className="text-gray-300 leading-relaxed">
+                Le site est livré clé en main et hébergé sur le compte du client.<br />
+                L’hébergement, les emails et la gestion serveur ne sont pas inclus.
+              </p>
+            </CardContent>
+          </Card>
+
+          {/* Result Card */}
           <Card 
             className="backdrop-blur-sm border-2 mb-12"
             style={{ 
@@ -168,17 +184,19 @@ export default function InformationsPage() {
               boxShadow: '0 10px 30px rgba(212,175,55,0.3)'
             }}
           >
-            <CardContent className="p-8">
-              <h3 className="text-3xl font-script font-bold mb-6 text-center gold-text-gradient">
-                ✨ Conclusion
+            <CardContent className="p-6 sm:p-8">
+              <h3 className="text-2xl sm:text-3xl font-script font-bold mb-4 sm:mb-6 text-center gold-text-gradient">
+                ✅ Résultat
               </h3>
-              <p className="text-gray-300 text-lg leading-relaxed mb-6 text-center">
-                Plus vous me donnez d'informations, plus votre site sera :
-              </p>
-              <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8">
-                {["✔️ Clair", "✔️ Professionnel", "✔️ Personnalisé", "✔️ Adapté à vos besoins", "✔️ Attrayant pour vos visiteurs"].map((benefit, index) => (
-                  <div key={index} className="text-center min-w-[140px]">
-                    <p className="font-semibold text-lg" style={{ color: '#D4AF37' }}>
+              <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center items-center gap-3 sm:gap-6 md:gap-8">
+                {[
+                  "✔️ Plus aucune confusion sur l’hébergement",
+                  "✔️ Client bien cadré dès le départ",
+                  "✔️ Positionnement pro",
+                  "✔️ Zéro prise de tête technique"
+                ].map((benefit, index) => (
+                  <div key={index} className="text-center w-full sm:w-auto">
+                    <p className="font-semibold text-base sm:text-lg" style={{ color: '#D4AF37' }}>
                       {benefit}
                     </p>
                   </div>
@@ -188,8 +206,8 @@ export default function InformationsPage() {
           </Card>
 
           {/* CTA Section */}
-          <div className="text-center">
-            <Button asChild size="lg" className="text-lg px-8 py-6 rounded-full shadow-2xl transition-all gold-gradient text-black font-semibold hover:scale-105" style={{ boxShadow: '0 20px 50px rgba(212,175,55,0.5)' }}>
+          <div className="text-center flex justify-center">
+            <Button asChild size="lg" className="w-full sm:w-auto text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-full shadow-2xl transition-all gold-gradient text-black font-semibold hover:scale-105" style={{ boxShadow: '0 20px 50px rgba(212,175,55,0.5)' }}>
               <Link href="/contact">Prêt à commencer ? Contactez-moi 💌</Link>
             </Button>
           </div>

@@ -29,7 +29,7 @@ export async function POST(request: NextRequest) {
     // Envoyer l'email avec Resend à l'adresse vérifiée
     const { data, error } = await resend.emails.send({
       from: "EverInSite <onboarding@resend.dev>",
-      to: "clem952@outlook.fr", // Adresse vérifiée sur Resend
+      to: "clem952@outlook.fr",
       replyTo: email,
       subject: `Nouvelle demande de ${nom} - ${categorie}`,
       react: ContactEmail({ nom, email, categorie, description })

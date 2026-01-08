@@ -114,37 +114,37 @@ export default function ContactPage() {
 
         {/* Contact Form Section */}
         <section className="relative py-20 px-4 sm:px-6 lg:px-8 z-10" style={{ background: 'linear-gradient(to bottom right, #0a0a0a, #000000, #0a0a0a)' }}>
-          <div className="max-w-5xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
               {/* Contact Info Cards */}
               <div className="space-y-6">
                 <Card className="border-2 hover:shadow-2xl transition-all backdrop-blur-sm" style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)', borderColor: 'rgba(212, 175, 55, 0.3)', boxShadow: '0 10px 30px rgba(212,175,55,0.15)' }}>
-                  <CardContent className="p-6">
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-full gold-gradient flex items-center justify-center flex-shrink-0 shadow-lg" style={{ boxShadow: '0 10px 25px rgba(212,175,55,0.5)' }}>
-                        <Mail className="w-6 h-6 text-black" />
+                  <CardContent className="p-8">
+                    <div className="flex items-start gap-5">
+                      <div className="w-14 h-14 rounded-full gold-gradient flex items-center justify-center flex-shrink-0 shadow-lg" style={{ boxShadow: '0 10px 25px rgba(212,175,55,0.5)' }}>
+                        <Mail className="w-7 h-7 text-black" />
                       </div>
                       <div>
-                        <h3 className="font-bold text-lg mb-1" style={{ color: '#D4AF37' }}>Email</h3>
-                        <p className="text-gray-300 text-sm">EverInSite@outlook.fr</p>
+                        <h3 className="font-bold text-xl mb-1" style={{ color: '#D4AF37' }}>Email</h3>
+                        <p className="text-gray-300 text-base">EverInSite@outlook.fr</p>
                       </div>
                     </div>
                   </CardContent>
                 </Card>
 
                 <Card className="border-2 hover:shadow-2xl transition-all backdrop-blur-sm" style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)', borderColor: 'rgba(212, 175, 55, 0.3)', boxShadow: '0 10px 30px rgba(212,175,55,0.15)' }}>
-                  <CardContent className="p-6">
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-full gold-gradient flex items-center justify-center flex-shrink-0 shadow-lg" style={{ boxShadow: '0 10px 25px rgba(212,175,55,0.5)' }}>
-                        <Instagram className="w-6 h-6 text-black" />
+                  <CardContent className="p-8">
+                    <div className="flex items-start gap-5">
+                      <div className="w-14 h-14 rounded-full gold-gradient flex items-center justify-center flex-shrink-0 shadow-lg" style={{ boxShadow: '0 10px 25px rgba(212,175,55,0.5)' }}>
+                        <Instagram className="w-7 h-7 text-black" />
                       </div>
                       <div>
-                        <h3 className="font-bold text-lg mb-1" style={{ color: '#D4AF37' }}>Instagram</h3>
+                        <h3 className="font-bold text-xl mb-1" style={{ color: '#D4AF37' }}>Instagram</h3>
                         <a 
                           href="https://www.instagram.com/everinsite?igsh=MXNwYmFkdDB4M3NpOA%3D%3D&utm_source=qr" 
                           target="_blank" 
                           rel="noopener noreferrer"
-                          className="text-gray-300 text-sm transition-colors"
+                          className="text-gray-300 text-base transition-colors"
                           onMouseEnter={(e) => e.currentTarget.style.color = '#D4AF37'}
                           onMouseLeave={(e) => e.currentTarget.style.color = '#d1d5db'}
                         >
@@ -159,17 +159,17 @@ export default function ContactPage() {
               {/* Contact Form */}
               <div className="lg:col-span-2">
                 <Card className="border-2 shadow-2xl backdrop-blur-sm" style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)', borderColor: 'rgba(212, 175, 55, 0.3)', boxShadow: '0 20px 50px rgba(212,175,55,0.2)' }}>
-                  <CardHeader>
-                    <CardTitle className="text-3xl font-script gold-text-gradient">Formulaire RSVP</CardTitle>
-                    <CardDescription className="text-gray-300">
+                  <CardHeader className="p-8">
+                    <CardTitle className="text-4xl font-script gold-text-gradient">Formulaire RSVP</CardTitle>
+                    <CardDescription className="text-gray-300 text-lg">
                       Remplissez ce formulaire pour me dire quel site vous voulez. Je vous recontacterai rapidement pour discuter de votre projet.
                     </CardDescription>
                   </CardHeader>
-                  <CardContent>
-                    <form onSubmit={handleSubmit} className="space-y-6">
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div className="space-y-2">
-                          <Label htmlFor="nom" style={{ color: '#D4AF37' }}>Votre nom *</Label>
+                  <CardContent className="p-8 pt-0">
+                    <form onSubmit={handleSubmit} className="space-y-8">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="space-y-3">
+                          <Label htmlFor="nom" className="text-lg" style={{ color: '#D4AF37' }}>Votre nom *</Label>
                           <Input
                             id="nom"
                             name="nom"
@@ -177,13 +177,13 @@ export default function ContactPage() {
                             required
                             value={formData.nom}
                             onChange={handleChange}
-                            className="border-2 text-gray-200 placeholder:text-gray-500"
+                            className="border-2 text-gray-200 placeholder:text-gray-500 h-12 text-lg"
                             style={{ backgroundColor: 'rgba(0, 0, 0, 0.8)', borderColor: 'rgba(212, 175, 55, 0.3)' }}
                           />
                         </div>
                         
-                        <div className="space-y-2">
-                          <Label htmlFor="email" style={{ color: '#D4AF37' }}>Email *</Label>
+                        <div className="space-y-3">
+                          <Label htmlFor="email" className="text-lg" style={{ color: '#D4AF37' }}>Email *</Label>
                           <Input
                             id="email"
                             name="email"
@@ -192,41 +192,45 @@ export default function ContactPage() {
                             required
                             value={formData.email}
                             onChange={handleChange}
-                            className="border-2 text-gray-200 placeholder:text-gray-500"
+                            className="border-2 text-gray-200 placeholder:text-gray-500 h-12 text-lg"
                             style={{ backgroundColor: 'rgba(0, 0, 0, 0.8)', borderColor: 'rgba(212, 175, 55, 0.3)' }}
                           />
                         </div>
                       </div>
 
-                      <div className="space-y-2">
-                        <Label htmlFor="categorie" style={{ color: '#D4AF37' }}>Type de site souhaité *</Label>
+                      <div className="space-y-3">
+                        <Label htmlFor="categorie" className="text-lg" style={{ color: '#D4AF37' }}>Type de site souhaité *</Label>
                         <Select required value={formData.categorie} onValueChange={handleSelectChange}>
-                          <SelectTrigger className="border-2 text-gray-200" style={{ backgroundColor: 'rgba(0, 0, 0, 0.8)', borderColor: 'rgba(212, 175, 55, 0.3)' }}>
+                          <SelectTrigger className="border-2 text-gray-200 h-12 text-lg" style={{ backgroundColor: 'rgba(0, 0, 0, 0.8)', borderColor: 'rgba(212, 175, 55, 0.3)' }}>
                             <SelectValue placeholder="Choisissez une catégorie" />
                           </SelectTrigger>
-                          <SelectContent style={{ backgroundColor: 'rgba(0, 0, 0, 0.95)', borderColor: 'rgba(212, 175, 55, 0.3)' }}>
-                            <SelectItem value="communautes">Communautés & associations</SelectItem>
-                            <SelectItem value="professionnels">Professionnel</SelectItem>
-                            <SelectItem value="creatifs">Créatif & artistique</SelectItem>
-                            <SelectItem value="personnels">Personnel & émotionnel</SelectItem>
-                            <SelectItem value="evenementiels">Événementiel</SelectItem>
-                            <SelectItem value="autre">Autre / Je ne sais pas encore</SelectItem>
-                          </SelectContent>
+                            <SelectContent style={{ backgroundColor: 'rgba(0, 0, 0, 0.95)', borderColor: 'rgba(212, 175, 55, 0.3)' }}>
+                              <SelectItem value="communautes">Communautés & associations</SelectItem>
+                              <SelectItem value="professionnels">Professionnels & Services</SelectItem>
+                              <SelectItem value="hotellerie">Hôtellerie & Restauration</SelectItem>
+                              <SelectItem value="sante">Santé & Juridique</SelectItem>
+                              <SelectItem value="immobilier">Immobilier & Architecture</SelectItem>
+                              <SelectItem value="education">Éducation & Formation</SelectItem>
+                              <SelectItem value="creatifs">Créatifs & artistiques</SelectItem>
+                              <SelectItem value="personnels">Personnels & émotionnels</SelectItem>
+                              <SelectItem value="evenementiels">Événementiels</SelectItem>
+                              <SelectItem value="autre">Autre / Je ne sais pas encore</SelectItem>
+                            </SelectContent>
                         </Select>
                       </div>
 
-                      <div className="space-y-2">
-                        <Label htmlFor="description" style={{ color: '#D4AF37' }}>Décrivez le site que vous voulez *</Label>
+                      <div className="space-y-3">
+                        <Label htmlFor="description" className="text-lg" style={{ color: '#D4AF37' }}>Décrivez le site que vous voulez *</Label>
                         <Textarea
                           id="description"
                           name="description"
                           placeholder="Expliquez-moi votre projet : quel type de site vous voulez, les fonctionnalités souhaitées, le style, les couleurs, le contenu à inclure, etc. Plus vous donnez de détails, mieux je pourrai répondre à vos attentes !"
                           required
-                          rows={8}
+                          rows={10}
                           maxLength={MAX_DESCRIPTION_LENGTH}
                           value={formData.description}
                           onChange={handleChange}
-                          className="border-2 text-gray-200 placeholder:text-gray-500 resize-none"
+                          className="border-2 text-gray-200 placeholder:text-gray-500 resize-none text-lg p-4"
                           style={{ backgroundColor: 'rgba(0, 0, 0, 0.8)', borderColor: 'rgba(212, 175, 55, 0.3)' }}
                         />
                         <div className="flex items-center justify-between text-sm">
@@ -249,14 +253,14 @@ export default function ContactPage() {
                         type="submit" 
                         size="lg"
                         disabled={isSubmitting}
-                        className="w-full gold-gradient text-black font-semibold hover:scale-105 transition-all shadow-lg"
-                        style={{ boxShadow: '0 10px 30px rgba(212,175,55,0.5)' }}
+                        className="w-full gold-gradient text-black font-bold text-xl py-6 hover:scale-105 transition-all shadow-lg"
+                        style={{ boxShadow: '0 15px 35px rgba(212,175,55,0.5)' }}
                       >
                         {isSubmitting ? (
                           <>Envoi en cours...</>
                         ) : (
                           <>
-                            <Send className="w-5 h-5 mr-2" />
+                            <Send className="w-6 h-6 mr-3" />
                             Envoyer ma demande
                           </>
                         )}
@@ -266,31 +270,6 @@ export default function ContactPage() {
                 </Card>
               </div>
             </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="relative py-20 px-4 sm:px-6 lg:px-8 z-10" style={{ background: 'linear-gradient(to bottom right, #000000, #0a0a0a, #1a1a1a)' }}>
-          <div className="absolute inset-0 opacity-5">
-            <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle at 50% 50%, rgba(212,175,55,0.15) 0%, transparent 60%)' }}></div>
-          </div>
-          <div className="max-w-4xl mx-auto text-center relative z-10">
-            <h2 className="text-4xl font-script font-bold gold-text-gradient mb-6">
-              Prêt à créer votre site de rêve ? 💎
-            </h2>
-            <p className="text-xl text-gray-300 mb-8">
-              Rejoignez mes clients satisfaits qui ont leur site web unique créé sur mesure
-            </p>
-            <Button 
-              asChild
-              size="lg" 
-              className="text-lg px-8 py-6 rounded-full gold-gradient text-black font-semibold hover:scale-105 transition-all shadow-2xl"
-              style={{ boxShadow: '0 20px 50px rgba(212,175,55,0.5)' }}
-            >
-              <a href="https://www.instagram.com/everinsite?igsh=MXNwYmFkdDB4M3NpOA%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer">
-                Voir mes réalisations sur Instagram ✨
-              </a>
-            </Button>
           </div>
         </section>
       </main>

@@ -4,6 +4,3 @@ Allow: /
 
 # Sitemap
 Sitemap: https://everinsite.vercel.app/sitemap.xml
-
-# Disallow maintenance page
-Disallow: /maintenance

@@ -1,0 +1,22 @@
+{
+  "redirects": [
+    {
+      "source": "/googlee0caedf6e8e72c62",
+      "destination": "/google387f99fe32499d9a.html",
+      "permanent": true
+    },
+    {
+      "source": "/googlee0caedf6e8e72c62.html",
+      "destination": "/google387f99fe32499d9a.html",
+      "permanent": true
+    },
+    {
+      "source": "/googlee0caedf6e8e72c62/:path*",
+      "destination": "/google387f99fe32499d9a.html",
+      "permanent": true
+    }
+  ],
+  "github": {
+    "silent": true
+  }
+}
