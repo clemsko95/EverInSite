@@ -270,7 +270,10 @@ function SidebarTrigger({
       }}
       {...props}
     >
-      <PanelLeft data-slot="icon" aria-label="Basculer la barre latérale" />
+      <PanelLeftIcon
+        data-slot="icon"
+        aria-label="Basculer la barre latérale"
+      />
       <span className="sr-only">Basculer la barre latérale</span>
     </button>
   )
@@ -665,7 +668,7 @@ function SidebarMenuSubItem({
 
 function SidebarMenuSubButton({
   asChild = false,
-  size = "md",
+  size = "sm",
   isActive = false,
   className,
   ...props
