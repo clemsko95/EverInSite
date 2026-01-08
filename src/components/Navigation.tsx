@@ -25,7 +25,12 @@ export default function Navigation() {
           <Link href="/" className="flex items-center gap-3 group flex-shrink-0">
             <div className="relative w-14 h-14 sm:w-16 sm:h-16 transition-transform group-hover:scale-110">
               <Image
-                src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/logo-1764781489676.PNG?width=200&height=200&resize=contain"
+                <Image
+  src="/logo.png"
+  alt="EverInSite Logo"
+  ...
+/>
+
                 alt="EverInSite Logo"
                 width={64}
                 height={64}
